@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 꽃다발 테스트 - 결과</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'psychotest/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <span class="Poinsettia">Poinsettia</span>
+        <span class="title">나만의 꽃다발 테스트</span>
+        <div class="image-container">
+            <img src="{% static image_path %}" alt="꽃 이미지" class="flower-image">
+        </div>
+        <div class="result-container">
+            <div class="result-message">
+                <p>{{ result_text }}</p>
+            </div>
+            <div class="result-flower">
+                <p>{{ result_message|linebreaksbr }}</p>
+            </div>
+        </div>
+        <a href="#" class="next-button">바로 선물하러 가기</a>
+        <div class="social-media">
+            <a href="#"><img src="{% static 'psychotest/images/insta.png' %}" alt="Instagram"></a>
+            <a href="#"><img src="{% static 'psychotest/images/kakao.png' %}" alt="Kakao"></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 꽃다발 테스트 - 질문 2</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'psychotest/css/styles.css' %}">
+    <script>
+        function saveAnswer(answer) {
+            document.getElementById('answer').value = answer;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <span class="Poinsettia">Poinsettia</span>
+        <span class="title">나만의 꽃다발 테스트</span>
+        <img src="{% static 'psychotest/images/Q2.png' %}" class="flower-image" alt="Flower Shop">
+        <span class="question">꽃 향기에 이끌려 꽃집으로 들어온 당신,<br>당신의 손길이 멈춘 꽃다발은?</span>
+        <form method="post" action="{% url 'question2' %}">
+            {% csrf_token %}
+            <input type="hidden" id="answer" name="answer" value="">
+            <button class="option-button" type="button" onclick="saveAnswer('option1')">심플한 한 송이 꽃다발</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option2')">한 손에 쏙 들어오는 조화로운 꽃다발</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option3')">한 손 가득 화사한 꽃다발</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option4')">두 손 가득 화려하고 풍성한 꽃다발</button>
+            <button class="next-button" type="submit">다음</button>
+        </form>
+    </div>
+</body>
+</html>

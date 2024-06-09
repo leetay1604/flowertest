@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 꽃다발 테스트 - 질문 3</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'psychotest/css/styles.css' %}">
+    <script>
+        function changeImage(animal) {
+            var image = document.getElementById('question-image');
+            switch(animal) {
+                case 'lion':
+                    image.src = "{% static 'psychotest/images/lion.png' %}";
+                    break;
+                case 'chick':
+                    image.src = "{% static 'psychotest/images/chick.png' %}";
+                    break;
+                case 'bunny':
+                    image.src = "{% static 'psychotest/images/bunny.png' %}";
+                    break;
+                case 'dog':
+                    image.src = "{% static 'psychotest/images/dog.png' %}";
+                    break;
+                case 'peacock':
+                    image.src = "{% static 'psychotest/images/peacock.png' %}";
+                    break;
+                case 'dolphin':
+                    image.src = "{% static 'psychotest/images/dolphin.png' %}";
+                    break;
+                default:
+                    image.src = "{% static 'psychotest/images/lion.png' %}";
+            }
+        }
+
+        function saveAnswer(answer) {
+            document.getElementById('answer').value = answer;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <span class="Poinsettia">Poinsettia</span>
+        <span class="title">나만의 꽃다발 테스트</span>
+        <img id="question-image" src="{% static 'psychotest/images/lion.png' %}" class="flower-image" alt="Question Image">
+        <span class="question">꽃을 든 나의 모습을 상상해보는 당신, 가장 어울리는 이미지는?</span>
+        <form method="post" action="{% url 'question3' %}">
+            {% csrf_token %}
+            <input type="hidden" id="answer" name="answer" value="">
+            <button class="option-button" type="button" onclick="saveAnswer('option1'); changeImage('lion')">정열적이고 매혹적인 사자</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option2'); changeImage('chick')">발랄하고 생기넘치는 병아리</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option3'); changeImage('bunny')">수줍음을 가득한 귀여운 토끼</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option4'); changeImage('dog')">밝고 순수한 사모예드</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option5'); changeImage('peacock')">우아하고 신비로운 공작새</button>
+            <button class="option-button" type="button" onclick="saveAnswer('option6'); changeImage('dolphin')">청량한 바다를 누비는 시원한 돌고래</button>
+            <button class="next-button" type="submit">다음</button>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 꽃다발 테스트</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'psychotest/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'psychotest/images/flower.png' %}" class="flower-image" alt="Flower Image">
+        <span class="main-title">나만의 꽃다발 테스트</span>
+        <div class="divider"></div>
+        <span class="subtitle">색상부터 꽃말까지, 내가 찾던 완벽한 꽃다발</span>
+        <a href="/question/0/" class="start-button">시작하기</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fffefc;
+  margin: 0;
+  font-family: 'Noto Serif KR', serif;
+  text-align: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1125px;
+  height: 100vh;
+  background-color: #fffefc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-y: auto; /* 스크롤이 필요할 때 스크롤을 허용 */
+  transition: opacity 0.5s ease-out;
+}
+
+.container.fade-out{
+  opacity: 0;
+}
+
+.flower-image {
+  width: 80%;
+  max-width: 430.7px;
+  margin: 20px 0;
+  object-fit: contain;
+}
+
+.divider {
+  width: 90%;
+  max-width: 1125px;
+  height: 1px;
+  margin: 20px 0;
+  background-color: #51483b;
+}
+
+.main-title {
+  width: 90%;
+  max-width: 769.5px;
+  margin: 20px 0;
+  font-size: 3vw;
+  font-weight: 900;
+  color: #191919;
+}
+
+.subtitle {
+  width: 90%;
+  max-width: 664px;
+  margin: 15px 0;
+  font-size: 2.5vw;
+  font-weight: 600;
+  color: #191919;
+}
+
+.start-button {
+  width: 80%;
+  max-width: 448.8px;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+  border: solid 1px #191919;
+  background-color: #fffefc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #191919;
+  font-size: 2.5vw;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 60px;
+  }
+  .subtitle {
+    font-size: 35px;
+  }
+  .start-button {
+    font-size: 30px;
+  }
+}
+
+
+.Poinsettia {
+  width: 90%;
+  max-width: 406.5px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 5vw;
+  font-weight: 900;
+  text-align: center;
+  color: #191919;
+  margin-top: 10px; /* 상단 여백 조정 */
+}
+
+.title {
+  width: 90%;
+  max-width: 406.5px;
+  margin: 10px 0; /* 상단 여백 조정 */
+  font-family: 'Noto Serif KR', serif;
+  font-size: 5vw;
+  font-weight: 600;
+  text-align: center;
+  color: #191919;
+}
+
+.flower-image {
+  width: 80%;
+  max-width: 500px; /* 이미지 크기 조정 */
+  height: auto;
+  margin: 10px 0; /* 상단 여백 조정 */
+  object-fit: contain;
+}
+
+.question {
+  width: 90%;
+  max-width: 769.5px;
+  margin: 10px 0; /* 상단 여백 조정 */
+  font-family: 'Noto Serif KR', serif;
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  color: #191919;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0; /* 상단 여백 조정 */
+}
+
+.option-button {
+  width: 90%;
+  max-width: 300px; /* 버튼 크기 조정 */
+  margin: 5px 0; /* 상단 여백 조정 */
+  padding: 10px;
+  border: 1px solid #191919;
+  border-radius: 5px;
+  background-color: #fffefc;
+  font-size: 3vw;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.option-button:hover {
+  background-color: #f0f0f0;
+}
+
+.next-button {
+  width: 100px; /* 버튼 크기 조정 */
+  margin-top: 10px; /* 상단 여백 조정 */
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9534f;
+  color: #ffffff;
+  font-size: 3vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #c9302c;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+}
+
+.result-message {
+  font-family: 'Noto Serif KR', serif;
+  width: 100%;
+  max-width: 720px;
+  font-size: 25px; /* 폰트 크기 조정 */
+  font-weight: bold;
+  color: #191919;
+  margin: 10px 0; /* 여백 조정 */
+  white-space: pre-wrap; /* 줄바꿈을 적용합니다 */
+  word-wrap: break-word; /* 길게 이어지는 단어가 있으면 줄을 바꿉니다 */
+  text-align: center; /* 중앙 정렬 */
+  line-height: 1.2; /* 줄 간격을 줄여서 한 화면에 더 많은 내용을 표시 */
+}
+
+.result-flower {
+  font-family: 'Noto Serif KR', serif;
+  width: 100%;
+  max-width: 720px;
+  font-size: 12px; /* 폰트 크기 조정 */
+  font-weight: 600;
+  color: #191919;
+  margin: 10px 0; /* 여백 조정 */
+  text-align: center; /* 중앙 정렬 */
+  line-height: 1.2; /* 줄 간격을 줄여서 한 화면에 더 많은 내용을 표시 */
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* 작은 글자와 다음 버튼 사이의 간격을 줄입니다 */
+}
+
+
+.result-container .result-message,
+.result-container .result-flower {
+    margin-bottom: 15px; /* 메시지와 꽃 텍스트 사이의 간격을 줄입니다 */
+}
+
+.\- {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .result-message {
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.result-flower {
+    font-size: 12px;
+    line-height: 1.1;
+}
+  .next-button {
+      width: 150px;
+      height: 40px;
+      font-size: 16px;
+  }
+
+  .social-media img {
+      width: 40px;
+      height: 40px;
+  }
+}

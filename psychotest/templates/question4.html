@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 꽃다발 테스트 - 질문 4</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'psychotest/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <span class="Poinsettia">Poinsettia</span>
+        <span class="title">나만의 꽃다발 테스트</span>
+        <img src="{% static 'psychotest/images/Q4.png' %}" class="flower-image" alt="Question Image">
+        <span class="question">약속 장소에 도착한 당신, 꽃다발과 함께 쪽지를 건넵니다. 쪽지에 담긴 내용은?</span>
+        <form method="post" action="{% url 'question4' %}" id="question-form">
+            {% csrf_token %}
+            <input type="hidden" id="answer" name="answer" value="">
+            {% for question in questions %}
+                <button class="option-button" type="button" onclick="saveAnswer('option{{ forloop.counter }}')">{{ question }}</button>
+            {% endfor %}
+            <button class="next-button" type="button" onclick="submitForm()">다음</button>
+        </form>
+    </div>
+    <script>
+        function saveAnswer(answer) {
+            document.getElementById('answer').value = answer;
+        }
+
+        function submitForm() {
+            if (document.getElementById('answer').value === '') {
+                alert('옵션을 선택해주세요.');
+                return;
+            }
+            document.getElementById('question-form').submit();
+        }
+    </script>
+</body>
+</html>
